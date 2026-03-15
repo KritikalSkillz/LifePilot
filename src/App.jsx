@@ -1,9 +1,7 @@
-import Dashboard from "./pages/Dashboard";
-
 export default function App() {
   return (
     <div>
-      <Dashboard />
+      <h1>Life Pilot Running</h1>
     </div>
   );
 }

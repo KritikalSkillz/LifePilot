@@ -1,8 +1,8 @@
 export default function Dashboard() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Dashboard</h1>
-      <p>Welcome to Life Pilot.</p>
+    <div>
+      <h1>Life Pilot</h1>
+      <p>Dashboard loading...</p>
     </div>
   );
 }

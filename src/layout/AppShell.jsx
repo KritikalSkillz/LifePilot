@@ -1,16 +1,39 @@
-import Header from "./Header"
-import BottomNav from "./BottomNav"
+import { useState } from "react"
 
-export default function AppShell({ title, children, setPage }) {
+import Dashboard from "../pages/Dashboard"
+import Tasks from "../pages/Tasks"
+import Quests from "../pages/Quests"
+import Profile from "../pages/Profile"
+
+export default function AppShell() {
+  const [page, setPage] = useState("dashboard")
+
+  const renderPage = () => {
+    if (page === "dashboard") return <Dashboard />
+    if (page === "tasks") return <Tasks />
+    if (page === "quests") return <Quests />
+    if (page === "profile") return <Profile />
+  }
+
   return (
-    <div className="app-container">
-      <Header title={title} />
+    <div>
 
-      <div className="content">
-        {children}
-      </div>
+      <header>
+        <h1>Life Pilot</h1>
+        <p>Header Area</p>
+      </header>
 
-      <BottomNav setPage={setPage} />
+      <main>
+        {renderPage()}
+      </main>
+
+      <footer>
+        <button onClick={() => setPage("dashboard")}>Dashboard</button>
+        <button onClick={() => setPage("tasks")}>Tasks</button>
+        <button onClick={() => setPage("quests")}>Quests</button>
+        <button onClick={() => setPage("profile")}>Profile</button>
+      </footer>
+
     </div>
   )
 }

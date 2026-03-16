@@ -1,20 +1,7 @@
-import { useState } from "react"
-import AppShell from "./components/AppShell"
-import "./styles/global.css"
+import AppShell from "./layout/AppShell"
 
-export default function App() {
-  const [page, setPage] = useState("dashboard")
-
-  const renderPage = () => {
-    if (page === "dashboard") return <div>Dashboard</div>
-    if (page === "tasks") return <div>Tasks</div>
-    if (page === "quests") return <div>Quests</div>
-    if (page === "profile") return <div>Profile</div>
-  }
-
-  return (
-    <AppShell title="Life Pilot" setPage={setPage}>
-      {renderPage()}
-    </AppShell>
-  )
+function App() {
+  return <AppShell />
 }
+
+export default App
